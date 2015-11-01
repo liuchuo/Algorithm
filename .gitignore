@@ -10,3 +10,5 @@
 *.pbxproj
 
 *.xcscheme
+
+*.xcbkptlist
