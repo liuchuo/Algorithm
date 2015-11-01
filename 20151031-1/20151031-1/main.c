@@ -15,11 +15,11 @@ int main() {
     printf("请输入结果：");
     scanf("%d",&result);
     for(i[1] = 1;i[1] <= 4;i[1]++) {
-        if((i[1] < 4) || (num[2] != 0)) {
+        if((i[1] < 4) || (num[2] != 0)) { //两者至少成立一个，不能既是/,后面一个数字又是0
             for(i[2] = 1;i[2] <= 4;i[2]++) {
-                if((i[2] < 4) || num[3] != 0) {
+                if((i[2] < 4) || (num[3] != 0)) {
                     for(i[3] = 1;i[3] <= 4;i[3]++) {
-                        if(i[3] < 4 || num[5] != 0) {
+                        if((i[3] < 4) || (num[5] != 0)) {
                             left = 0;
                             right = num[1];
                             sign = 1;
@@ -31,9 +31,25 @@ int main() {
                                         right = num[j + 1];
                                         break;
                                     case '-':
-                                        left = left - sign * right;
+                                        left = left + sign * right;//处理的是前一个运算符
                                         sign = -1;
+                                        right = num[j + 1];
+                                        break;
+                                    case '*':
+                                        right = right * num[j + 1];
+                                        break;
+                                    case '/':
+                                        right = right / num[j + 1];
+                                        break;
                                 }
+                            }
+                            if(left + sign * right == result) {
+                                count++;
+                                printf("%3d :",count);
+                                for(j = 1;j <= 4;j++) {
+                                    printf("%d %c ",num[j],oper[i[j]]);
+                                }
+                                printf("%d = %d\n",num[5],result);
                             }
                         }
                     }
@@ -41,4 +57,8 @@ int main() {
             }
         }
     }
+    if(count == 0)
+        printf("没有符合要求的方法！\n");
+    getchar();
+    return 0;
 }
