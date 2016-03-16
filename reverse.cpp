@@ -1,5 +1,5 @@
 #include <iostream>
-#include <algorithm>
+#include <algorithm> 
 using namespace std;
 int main() {
     int a[10] = {987, 654, 32, 1, 0};
