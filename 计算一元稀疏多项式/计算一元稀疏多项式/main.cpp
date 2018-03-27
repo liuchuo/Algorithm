@@ -1,16 +1,3 @@
-//
-//  main.cpp
-//
-//  数据结构课程设计-《计算一元稀疏多项式》
-//  班级：计算机系软件工程1班
-//  学号：20142344002
-//  姓名：陈欣
-//  指导老师：吴婷婷
-//
-//  Created by 陈欣 on 16/6/1.
-//  Copyright © 2016年 陈欣. All rights reserved.
-//
-
 #include <iostream>
 #include <algorithm>
 #include <string>
